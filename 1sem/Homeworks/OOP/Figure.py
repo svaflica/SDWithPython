@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import pandas as pd
 
 class Figure(ABC):
     def __init__(self, points: tuple[tuple, ...]):
@@ -19,15 +20,13 @@ class Figure(ABC):
         pass
 
     @abstractmethod
+    @classmethod
+    def constructFromSeries(series: pd.Series) -> object:
+        """construct instance from pandas.Series"""
+
+    @abstractmethod
     def graphFigure(self):
         """Draw figure via matplotlib.pyplot"""
         pass
 
-
-
-def constructFromDataSeries(series) -> Figure:
-    """
-    Return one of the ```Figure``` children classes instance constructed from pandas data series ```series``` where specified
-    type of the figure, neccessary points (such as center and radius for circle, axes for ellipse e.t.c.)
-    """
 
