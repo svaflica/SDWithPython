@@ -1,4 +1,4 @@
-FOLDER_TO_TEST = 'HA-SD-Python-1-sem-main/HA-2-(OOP)/solution/Figures'
+FOLDER_TO_TEST = 'solution'
 
 import pytest
 import os
