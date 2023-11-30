@@ -46,6 +46,6 @@ def test_check_min_functionality():
         figure = getattr(imported_classes[class_name], class_name.capitalize()).constructFromSeries(df.iloc[ind])
         str(figure)
         assert figure.class_type == RESULTS[ind][0]
-        assert round(figure.area, 2) == round(RESULTS[ind][1], 2)
+        assert round(figure.square, 2) == round(RESULTS[ind][1], 2)
         assert round(figure.perimeter, 2) == round(RESULTS[ind][2], 2)
         assert [list(p) if not isinstance(p, float) else p for p in figure.points] == RESULTS[ind][3]
