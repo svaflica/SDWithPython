@@ -21,7 +21,7 @@ class Figure(ABC):
 
     @classmethod
     @abstractmethod
-    def constructFromSeries(series: pd.Series) -> object:
+    def constructFromSeries(cls,series: pd.Series) -> object:
         """construct instance from pandas.Series"""
 
     @abstractmethod
