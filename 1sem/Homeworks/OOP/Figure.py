@@ -3,9 +3,9 @@ import pandas as pd
 
 class Figure(ABC):
     def __init__(self, points: tuple[tuple, ...]):
-        self.__points = points
-        self.__square = self.calculateSquare()
-        self.__perimeter = self.calculatePerimeter()
+        self.points = points
+        self.square = self.calculateSquare()
+        self.perimeter = self.calculatePerimeter()
         
     @abstractmethod
     def calculatePerimeter(self) -> float:
@@ -19,9 +19,9 @@ class Figure(ABC):
     def __str__(self) -> str:
         pass
 
-    @abstractmethod
     @classmethod
-    def constructFromSeries(series: pd.Series) -> object:
+    @abstractmethod
+    def constructFromSeries(cls,series: pd.Series) -> object:
         """construct instance from pandas.Series"""
 
     @abstractmethod

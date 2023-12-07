@@ -26,13 +26,13 @@ def test_check_files():
     for need_file in NEED_FILES:
         assert need_file in files
 
-        
+
 def test_check_import():
     imported_classes = {}
     for need_file in NEED_FILES:
         name = need_file.split('.')[0]
         imported_classes[name] = __import__(name)
-        
+
 
 def test_check_min_functionality():
     imported_classes = {}
@@ -46,6 +46,6 @@ def test_check_min_functionality():
         figure = getattr(imported_classes[class_name], class_name.capitalize()).constructFromSeries(df.iloc[ind])
         str(figure)
         assert figure.__class__.__name__.lower() == RESULTS[ind][0]
-        assert round(figure.area, 2) == round(RESULTS[ind][1], 2)
+        assert round(figure.square, 2) == round(RESULTS[ind][1], 2)
         assert round(figure.perimeter, 2) == round(RESULTS[ind][2], 2)
         assert [list(p) if not isinstance(p, float) else p for p in figure.points] == RESULTS[ind][3]
