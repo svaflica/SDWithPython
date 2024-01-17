@@ -26,13 +26,13 @@ def test_check_files():
     for need_file in NEED_FILES:
         assert need_file in files
 
-        
+
 def test_check_import():
     imported_classes = {}
     for need_file in NEED_FILES:
         name = need_file.split('.')[0]
         imported_classes[name] = __import__(name)
-        
+
 
 def test_check_min_functionality():
     imported_classes = {}
